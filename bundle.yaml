@@ -1,0 +1,31 @@
+name: terraform-aws-modules-demo
+description: "3 Terraform modules: VPC (/28), 2x EC2, and small RDS"
+modules:
+  - name: vpc_small
+    path: modules/vpc_small
+    creates:
+      - aws_vpc
+      - aws_subnet
+      - aws_internet_gateway
+      - aws_route_table
+  - name: ec2_two
+    path: modules/ec2_two
+    creates:
+      - aws_instance (count=2)
+      - aws_security_group
+  - name: rds_small
+    path: modules/rds_small
+    creates:
+      - aws_db_instance
+      - aws_db_subnet_group
+      - aws_security_group
+- name: s3_bucket
+  path: modules/s3_bucket
+  creates:
+    - aws_s3_bucket
+    - aws_s3_bucket_versioning
+    - aws_s3_bucket_server_side_encryption_configuration
+- name: glue_database
+  path: modules/glue_database
+  creates:
+    - aws_glue_catalog_database

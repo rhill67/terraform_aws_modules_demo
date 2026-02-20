@@ -1,0 +1,17 @@
+# For GovCloud, use a GovCloud region:
+# aws_region = "us-gov-west-1"
+
+name_prefix   = "roger-demo"
+instance_type = "t3.micro"
+
+# Optional: set if you want SSH access
+# ec2_key_name = "my-keypair"
+
+# RDS password (12+ chars recommended)
+db_password = "ChangeMe-StrongPassword123!"
+
+# Optional: S3 bucket name (must be globally unique). Leave empty to auto-generate.
+# s3_bucket_name = "my-unique-bucket-name"
+
+# Glue database name
+glue_database_name = "dvdrental_db"
