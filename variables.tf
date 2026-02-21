@@ -25,7 +25,7 @@ variable "ec2_key_name" {
 # RDS
 variable "db_engine" {
   type    = string
-  default = "mysql"
+  default = "postgresql"
 }
 
 variable "db_engine_version" {
