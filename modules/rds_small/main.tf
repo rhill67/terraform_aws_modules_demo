@@ -31,23 +31,23 @@ resource "aws_db_subnet_group" "this" {
 }
 
 resource "aws_db_instance" "this" {
-  identifier             = "${var.name_prefix}-rds"
-  allocated_storage      = 20
-  storage_type           = "gp3"
-  engine                 = var.db_engine
-  engine_version         = var.db_engine_version
-  instance_class         = var.instance_class
+  identifier        = "${var.name_prefix}-rds"
+  allocated_storage = 20
+  storage_type      = "gp3"
+  engine            = var.db_engine
+  engine_version    = var.db_engine_version
+  instance_class    = var.instance_class
 
-  db_name                = var.db_name
-  username               = var.username
-  password               = var.password
+  db_name  = var.db_name
+  username = var.username
+  password = var.password
 
   db_subnet_group_name   = aws_db_subnet_group.this.name
   vpc_security_group_ids = [aws_security_group.rds.id]
 
-  publicly_accessible    = false
-  skip_final_snapshot    = true
-  deletion_protection    = false
+  publicly_accessible     = false
+  skip_final_snapshot     = true
+  deletion_protection     = false
   backup_retention_period = 0
 
   tags = { Name = "${var.name_prefix}-rds" }
