@@ -25,12 +25,12 @@ variable "ec2_key_name" {
 # RDS
 variable "db_engine" {
   type    = string
-  default = "postgresql"
+  default = "postgres"
 }
 
 variable "db_engine_version" {
   type    = string
-  default = "8.0"
+  default = "18.2"
 }
 
 variable "db_instance_class" {
@@ -45,7 +45,7 @@ variable "db_name" {
 
 variable "db_username" {
   type    = string
-  default = "admin"
+  default = "admindemo"
 }
 
 variable "db_password" {
